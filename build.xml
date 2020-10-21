@@ -7,15 +7,12 @@
 
     <!-- Use this when all tools are on the $PATH -->
     <!--
-    
     <property name="phpunit" value="phpunit"/>
     -->
-
     <!-- Use this when the tools are located as PHARs in ${basedir}/build/tools -->
     <!--
     <property name="phpunit" value="${basedir}/build/tools/phpunit.phar"/>
     -->
-
     <target name="clean" unless="clean.done" description="Cleanup build artifacts.">
         <delete dir="${basedir}/build/api"/>
         <delete dir="${basedir}/build/coverage"/>
@@ -40,14 +37,7 @@
         <echo message="Built"/>
     </target>
 
-    <target name="phpunit" unless="phpunit.done" depends="prepare" description="Run unit tests with PHPUnit.">
-        <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
-            <arg value="--configuration"/>
-            <arg path="${basedir}/build/phpunit.xml"/>
-            <arg path="tests"/>
-        </exec>
-        <property name="phpunit.done" value="true"/>
-    </target>
+    
 
     <target name="phpunit-no-coverage" unless="phpunit.done" depends="prepare"
             description="Run unit tests with PHPUnit without generating code coverage reports.">
