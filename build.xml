@@ -2,7 +2,7 @@
 <project name="php-automate-build-ant" default="full-build">
 
     <!-- By default the tools are managed by Composer in ${basedir}/vendor/bin -->
-    
+    <property name="basedir" value="." />
     <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/>
 
     <!-- Use this when all tools are on the $PATH -->
